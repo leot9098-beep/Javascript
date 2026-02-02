@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log in</title>
+</head>
+<body>
+    <logger id="log">
+    <label>  Enter username: </label>
+    <!--  Kattjäveln --> 
+    <input type="name" id="name" name="name">
+    <br>
+    <label>  Enter password: </label>
+    <!--  Fried_water129 --> 
+    <input type="word" id="word" name="word">
+    <br>
+
+
+    <button id="confirm" value="submit"> Confirm</button>
+    </logger>
+
+
+<script>
+
+const logger = document.addEventListener('log');
+
+logger.addEventListener('confirm', function (event){
+event.preventDefault();
+const user = document.activeElement('name').value;
+const pass = document.activeElement('word').value;
+console.log(user + pass);
+
+if(user== "Kattjäveln" && pass == "Fried_water129"){
+    
+}
+else{
+    alert("Nuh uh! Wrong username or password stupid!")
+}
+});
+
+
+
+</script>
+</body>
+</html>

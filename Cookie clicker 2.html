@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie clicker 2</title>
+  
+            <link rel="stylesheet" href="javascript exempel 2.css">
+</head>
+
+<body>
+    <h1>KILL THE PUG</h1>
+    <h2 id="Kill"> hitcount : 0 </h2>
+    
+   <p><button id="knapp" ><img src="50abdt.webp"  width="300px"></button ></p>
+   <p><button id="autoo"><span id="Auto"> Purchase autoclicker (cost: 100 hit)</span></button>  </p>
+   <p><button id="damg">Upgrade damage (cost: 20 hit)</button>
+    <h2 >Damage per hit: <span id="showmult">1</span></h2> 
+</p>
+   <script>
+        let hit = 0;
+        let damage =1
+        let  boom = false;
+        let cost = 20
+        let autoclicker = null;
+        let mult = 1
+        let Purctheclicker = false
+
+        
+        
+        const text = document.getElementById('Kill');
+        const knapp = document.getElementById('knapp');
+        const autoclick = document.getElementById('autoo');
+        const upgrade = document.getElementById('damg')
+        
+
+
+        knapp.addEventListener('click', function (event){
+            hit += damage;
+            text.textContent = "hitcount : "+ hit;
+           
+        });
+
+        autoclick.addEventListener('click', function (event){
+            if (Purctheclicker==false&& hit >= 100){
+            hit-100;
+           Auto.textContent = "Autoclick (for lazy ahh people)";            
+          Purctheclicker=true;
+            if(boom == false){
+                boom = true;
+                autoclicker = setInterval(function (){
+                    if(boom == true){
+                    hit += damage;
+                    text.textContent ="hitcount : "+ hit;}    
+                },1000);
+            }
+            else{
+                boom = false;
+                clearInterval(autoclicker)
+            }
+        }
+
+        });
+        upgrade.addEventListener('click', function (event) {
+           if(hit>=cost){damage++;
+            hit -= cost;
+            text.textContent ="hitcount : "+ hit;
+            cost += 10;
+            damg.innerText = "Upgrade damage (cost: " + cost +" hit)";
+            mult++;
+            showmult.textContent = mult;
+        } })
+
+       
+
+
+
+
+        
+       
+
+
+       
+
+    </script>
+</body>
+</html>

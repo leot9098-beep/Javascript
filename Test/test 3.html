@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript exempel 3</title>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <img id="celebration-img" src="https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" style="display: none; width: 300px;">
+    
+    <script>
+        let countdown = 10;
+
+        const text = document.getElementById('text');
+        const img = document.getElementById('celebration-img');
+
+        const timerId = setInterval(function() {
+        if (countdown >= 0) {
+            text.textContent = "Nytt år om: " + countdown;
+            countdown--;
+        }
+        else{
+            text.textContent = "GOTT NYTT ÅR!!!!!!!";
+            img.style.display = "block";
+            clearInterval(timerId);
+        }
+        }, 1000);
+
+        if (countdown == 0){
+
+        }
+    </script>
+    
+</body>
+</html>

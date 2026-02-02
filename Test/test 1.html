@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-with, initial-scale=1.0">
+            <title>Javascript exempel 1</title>
+            <script>
+                alert('Hello World!');
+                console.log('Hello World 2!');
+            </script>
+        </head>
+        <body>
+            <form id="myForm">
+                <label for="inputField">Please enter your name:</label>
+                <input type="text" id="inputField" name="inputField">
+                <input type="submit" value="Submit">
+            </form>
+
+            <p id="greeting"></p>
+
+            <script>
+                document.getElementById('myForm').addEventListener('submit', function (event) {
+                    event.preventDefault(); // Prevent the form from submitting normally
+                    const input = document.getElementById('inputField').value;
+                    console.log(input);
+                    document.getElementById('greeting').innerText = 'Hello ' + input;
+                });
+            </script>
+    </html>

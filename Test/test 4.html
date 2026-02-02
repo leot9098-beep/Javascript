@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="username">Please enter your username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        let username = null;
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function (event){
+            event.preventDefault(); //behövs för att formen ska fungera!
+            
+            //Dessa två tar ut värdet, aka texten från de två inputsen
+            const text = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            //Debuggande för att se att texten tas in correct
+            console.log(text + password);
+            
+            //Extremt enkel kontroll av användarn och lösenord!
+            //Bör göras på backend istället för frontend men men ...
+            if(text == "test" && password == "paswrd"){
+                username = text;
+                //skickar användaren med deras användarnamn till en ny sida
+                //Även detta är inte ett säkert sätt att skicka information, men men ...
+                window.location.href = `javascript exempel 4,2.html?username=${encodeURIComponent(username)}`;
+            }
+            else{
+                alert("Fel användarnamn eller lösenord!");
+            }
+        });
+    </script>
+</body>
+</html>
