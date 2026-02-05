@@ -8,7 +8,7 @@
 </head>
 <body>
    
-    <logger id="log">
+    <form id="log">
     <h1>Log in</h1>     
     <label>  Enter username: </label>
     <!--  Kattjäveln --> 
@@ -18,25 +18,26 @@
     <!--  Fried_water129 --> 
     <input type="word" id="word" name="word">
     <br>
-    <button id="confirm" value="submit">Confirm</button>
-    </logger>
+    <input type="submit" value="Submit">
+    </form>
 
 
 <script>
 
-const logger = document.addEventListener('log');
+const logger = document.getElementById('log');
 
-logger.addEventListener('confirm', function (event){
+logger.addEventListener('submit', function (event){
 event.preventDefault();
-const user = document.activeElement('name').value;
-const pass = document.activeElement('word').value;
-console.log(user + pass);
+const user = document.getElementById('name').value;
+const password = document.getElementById('word').value;
+console.log(user + password);
 
-if(user== "Kattjäveln" && pass == "Fried_water129"){
-    alert("Test")
+if(user == "Kattjäveln" && password == "Fried_water129"){
+    alert("Test");
+    window.location.href = 
 }
 else{
-    alert("Nuh uh! Wrong username or password stupid!")
+    alert("Nuh uh! Wrong username or password stupid!");
 }
 });
 
