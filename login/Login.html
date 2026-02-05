@@ -33,8 +33,9 @@ const password = document.getElementById('word').value;
 console.log(user + password);
 
 if(user == "Kattjäveln" && password == "Fried_water129"){
-    alert("Test");
-    window.location.href = 
+    
+    username = user;
+    window.location.href = `javascript  Scooter.html?username=${encodeURIComponent(username)}`;
 }
 else{
     alert("Nuh uh! Wrong username or password stupid!");
