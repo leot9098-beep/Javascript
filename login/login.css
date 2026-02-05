@@ -1,0 +1,16 @@
+body 
+{background-color: rgb(168, 214, 214);
+text-align: center;
+align-content: center;
+display: flex;
+margin: 200px;
+justify-content: center;
+
+}
+#log{
+border: #000000, solid;
+border-width: 5px;
+border-radius: 10px;
+padding: 100;
+background-color: rgb(219, 219, 219);
+}
