@@ -8,9 +8,11 @@ justify-content: center;
 
 }
 #log{
-border: #000000, solid;
+border: #048085, solid;
 border-width: 3px;
 border-radius: 10px;
 padding: 100;
 background-color: rgb(219, 219, 219);
+    text-shadow: 2px 4px 5px black;
+box-shadow:1px 2px 3px rgb(0, 0, 0); ;
 }
