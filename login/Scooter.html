@@ -1,15 +1,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+           
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scooter boy</title>
 </head>
 <body>
     <h2 id="welcome"></h2>
-    
-    <script>
-        const params = new URLSearchParams(window)
+       <p><button id="Hyra">Hyr här (startvärde: 160kr och 5kr per minut)</button>
+        <p id="info"></p>
 
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+const text = document.getElementById("welcome");
+        let username = params.get('username');
+        if(username){
+            text.textContent = `Välkommen ${username}!`;
+        }    
+        
+        let Hyr = false;
+        let tid = 0;
+        const Hyra = document.getElementById('Hyra')
+           Hyra.addEventListener('click', function (event) {
+           if(Hyr==false){
+            Hyr = true;
+            Hyra.innerText = "Avsluta hyrning";
+        
+            Timmer = setInterval(function (){
+                    if(Hyr == true){
+                    tid ++;}
+                },60000);
+            
+        } else{
+             Hyra.innerText = "Hyr här (startvärde: 160kr och 5kr per minut)";   
+             Hyr = false;
+            clearInterval(Timmer);
+            info.textContent = "Du hyrde vid tiden:      under: minuter summa:      kr";
+
+            }});
     </script>
 </body>
 </html>

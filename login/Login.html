@@ -16,7 +16,7 @@
     <br>
     <label>  Enter password: </label>
     <!--  Fried_water129 --> 
-    <input type="word" id="word" name="word">
+    <input type="password" id="word" name="word">
     <br>
     <input type="submit" value="Submit">
     <P></P>
@@ -37,7 +37,7 @@ console.log(user + password);
 if(user == "Kattjäveln" && password == "Fried_water129"){
     
     username = user;
-    window.location.href = `javascript  Scooter.html?username=${encodeURIComponent(username)}`;
+    window.location.href = `Scooter.html?username=${encodeURIComponent(username)}`;
 }
 else{
     alert("Nuh uh! Wrong username or password stupid!");
