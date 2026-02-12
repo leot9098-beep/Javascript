@@ -19,14 +19,17 @@ const text = document.getElementById("welcome");
         if(username){
             text.textContent = `Välkommen ${username}!`;
         }    
-        
+        let startvärde = 160;
         let Hyr = false;
         let tid = 0;
+        let Start = Date.now();
+        
         const Hyra = document.getElementById('Hyra')
            Hyra.addEventListener('click', function (event) {
            if(Hyr==false){
             Hyr = true;
             Hyra.innerText = "Avsluta hyrning";
+            
         
             Timmer = setInterval(function (){
                     if(Hyr == true){
@@ -37,7 +40,8 @@ const text = document.getElementById("welcome");
              Hyra.innerText = "Hyr här (startvärde: 160kr och 5kr per minut)";   
              Hyr = false;
             clearInterval(Timmer);
-            info.textContent = "Du hyrde vid tiden:      under: minuter summa:      kr";
+        
+            info.textContent = "Du hyrde vid tiden: " + Start + "  under: " + tid +" minuter. summa: " +(startvärde+tid*5) +"kr" ;
 
             }});
     </script>
