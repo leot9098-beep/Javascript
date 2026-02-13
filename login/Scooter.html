@@ -4,10 +4,12 @@
            
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Scooter boy</title>
 </head>
 <body>
     <h2 id="welcome"></h2>
+    <img src= "hq720.jpg" alt="">
        <p><button id="Hyra">Hyr här (startvärde: 160kr och 5kr per minut)</button>
         <p id="info"></p>
 
@@ -34,7 +36,7 @@ const text = document.getElementById("welcome");
             Timmer = setInterval(function (){
                     if(Hyr == true){
                     tid ++;}
-                },60000);
+                },1);
             
         } else{
              Hyra.innerText = "Hyr här (startvärde: 160kr och 5kr per minut)";   
