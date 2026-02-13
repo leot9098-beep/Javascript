@@ -24,27 +24,32 @@ const text = document.getElementById("welcome");
         let startvärde = 160;
         let Hyr = false;
         let tid = 0;
-        let Start = Date.now();
+        
         
         const Hyra = document.getElementById('Hyra')
            Hyra.addEventListener('click', function (event) {
            if(Hyr==false){
+            info.textContent ="";
             Hyr = true;
+            let Start = Date.now();
+            let date = new Date(Start*1000);
+            var Tim =date.getHours();
+            var Min ="0"+date.getMinutes();
             Hyra.innerText = "Avsluta hyrning";
             
         
             Timmer = setInterval(function (){
                     if(Hyr == true){
                     tid ++;}
-                },1);
+                },60000);
             
         } else{
              Hyra.innerText = "Hyr här (startvärde: 160kr och 5kr per minut)";   
              Hyr = false;
             clearInterval(Timmer);
         
-            info.textContent = "Du hyrde vid tiden: " + Start + "  under: " + tid +" minuter. summa: " +(startvärde+tid*5) +"kr" ;
-
+            info.textContent = "Du hyrde vid tiden: " + Tim+":"+Min + "  under: " + tid +" minuter. summa: " +(startvärde+tid*5) +"kr" ;
+             tid=0;
             }});
     </script>
 </body>
