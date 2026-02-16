@@ -1,18 +1,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-           
+                <link rel="stylesheet" href="Scooter styler.css">
+  
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Scooter boy</title>
 </head>
-<body>
+<body >
+    <h1 id="TITLE"> Scooter</h1>
     <h2 id="welcome"></h2>
-    <img src= "hq720.jpg" alt="">
-       <p><button id="Hyra">Hyr här (startvärde: 160kr och 5kr per minut)</button>
-        <p id="info"></p>
 
+    <img src= "segway-ninebot-kickscooter-e2-pro-1.webp" alt="">
+    <p>Här kan du hyra crazy scooters. Startvärdet är 150kr och 5kr per minut. btw om du inte betalar snor vi din oskuld så akta dig</p>
+       <p><button id="Hyra">Hyr här</button>
+        <p id="info"></p>
+<footer>Gjord av Leo Tsoi</footer>
     <script>
 
         const params = new URLSearchParams(window.location.search);
@@ -21,7 +25,7 @@ const text = document.getElementById("welcome");
         if(username){
             text.textContent = `Välkommen ${username}!`;
         }    
-        let startvärde = 160;
+        let startvärde = 150;
         let Hyr = false;
         let tid = 0;
         
@@ -29,6 +33,7 @@ const text = document.getElementById("welcome");
         const Hyra = document.getElementById('Hyra')
            Hyra.addEventListener('click', function (event) {
            if(Hyr==false){
+            
             info.textContent ="";
             Hyr = true;
             let Start = Date.now();
@@ -36,15 +41,13 @@ const text = document.getElementById("welcome");
             var Tim =date.getHours();
             var Min ="0"+date.getMinutes();
             Hyra.innerText = "Avsluta hyrning";
-            
-        
             Timmer = setInterval(function (){
                     if(Hyr == true){
                     tid ++;}
                 },60000);
             
         } else{
-             Hyra.innerText = "Hyr här (startvärde: 160kr och 5kr per minut)";   
+             Hyra.innerText = "Hyr här";   
              Hyr = false;
             clearInterval(Timmer);
         
