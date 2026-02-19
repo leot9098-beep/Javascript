@@ -6,17 +6,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Scooter boy</title>
+    <title> VHDeS.se</title>
 </head>
 <body >
-    <h1 id="TITLE"> Scooter</h1>
+    <h1 id="TITLE">  Vi Hyr Dig en elScooter </h1>
     <h2 id="welcome"></h2>
 
     <img src= "segway-ninebot-kickscooter-e2-pro-1.webp" alt="">
-    <p>Här kan du hyra crazy scooters. Startvärdet är 15kr och 5kr per minut.</p>
+    <p>Startvärdet är 15kr och 5kr per minut.</p>
        <p><button id="Hyrabutton">Hyr här</button>
         <p id="info"></p>
-<footer>Gjord av Leo Tsoi</footer>
+
     <script>
 
         const params = new URLSearchParams(window.location.search);
@@ -54,7 +54,7 @@ const text = document.getElementById("welcome");
              Hyr = false; 
             clearInterval(Timmer);
         
-            //info.textContent = "Du hyrde vid tiden: " + StartTID +"  under: " + tid +" minuter. Summa: " +(startvärde+tid*5) +"kr" ;
+           
             info.textContent = `Du hyrde vid tiden: ${StartTID}  under: ${tid} minuter. Summa: ${startvärde+tid*5} kr` ;
              tid=0;
             }});
