@@ -13,8 +13,8 @@
     <h2 id="welcome"></h2>
 
     <img src= "segway-ninebot-kickscooter-e2-pro-1.webp" alt="">
-    <p>Här kan du hyra crazy scooters. Startvärdet är 150kr och 5kr per minut. btw om du inte betalar snor vi din oskuld så akta dig</p>
-       <p><button id="Hyra">Hyr här</button>
+    <p>Här kan du hyra crazy scooters. Startvärdet är 15kr och 5kr per minut.</p>
+       <p><button id="Hyrabutton">Hyr här</button>
         <p id="info"></p>
 <footer>Gjord av Leo Tsoi</footer>
     <script>
@@ -25,21 +25,24 @@ const text = document.getElementById("welcome");
         if(username){
             text.textContent = `Välkommen ${username}!`;
         }    
-        let startvärde = 150;
+        let startvärde = 15;
         let Hyr = false;
         let tid = 0;
+        let Tim = null;
+        let Min = null; 
         
-        
-        const Hyra = document.getElementById('Hyra')
+
+        const Hyra = document.getElementById('Hyrabutton')
            Hyra.addEventListener('click', function (event) {
-           if(Hyr==false){
-            
-            info.textContent ="";
+        if(Hyr==false){
             Hyr = true;
+            info.textContent ="";
             let Start = Date.now();
             let date = new Date(Start*1000);
-            var Tim =date.getHours();
-            var Min ="0"+date.getMinutes();
+            StartTID = (new Date()).toLocaleString();
+           
+            if (Min<10)
+            Min="0"+Min;
             Hyra.innerText = "Avsluta hyrning";
             Timmer = setInterval(function (){
                     if(Hyr == true){
@@ -48,12 +51,20 @@ const text = document.getElementById("welcome");
             
         } else{
              Hyra.innerText = "Hyr här";   
-             Hyr = false;
+             Hyr = false; 
             clearInterval(Timmer);
         
-            info.textContent = "Du hyrde vid tiden: " + Tim+":"+Min + "  under: " + tid +" minuter. summa: " +(startvärde+tid*5) +"kr" ;
+            //info.textContent = "Du hyrde vid tiden: " + StartTID +"  under: " + tid +" minuter. Summa: " +(startvärde+tid*5) +"kr" ;
+            info.textContent = `Du hyrde vid tiden: ${StartTID}  under: ${tid} minuter. Summa: ${startvärde+tid*5} kr` ;
              tid=0;
             }});
+            
+            Hyrabutton.onclick = function() {
+                if(Hyr==true)
+                {this.style.backgroundColor = 'red';}
+                else 
+                this.style.backgroundColor = '#52b96c';
+    }
     </script>
 </body>
 </html>

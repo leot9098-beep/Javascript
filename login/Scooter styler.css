@@ -13,11 +13,12 @@ font-size: 100px;
 button{
     background-color: #52b96c;
   border-radius: 8px;
+  
   padding: 11px;
   padding-left: 30px;
   font-size: 20px;
   font-weight: bold;
-  border-style: none;
+  border-style:solid;
   padding-right: 30px;
   color: white;
  
